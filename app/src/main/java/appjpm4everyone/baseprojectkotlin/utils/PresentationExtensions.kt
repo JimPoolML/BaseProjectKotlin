@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import appjpm4everyone.baseprojectkotlin.BaseProjectKotlinApp
+import com.squareup.picasso.Picasso
 
 //import com.bumptech.glide.Glide
 
@@ -54,3 +56,7 @@ fun ImageView.loadImage(image: Int) {
     Glide.with(context).load(image)
         .into(this)
 }*/
+
+fun ImageView.fromUrl(url:String){
+    Picasso.get().load(url).into(this)
+}

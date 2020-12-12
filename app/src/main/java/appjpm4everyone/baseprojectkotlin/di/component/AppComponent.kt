@@ -3,6 +3,8 @@ package appjpm4everyone.baseprojectkotlin.di.component
 import android.app.Application
 import appjpm4everyone.baseprojectkotlin.di.module.AppModule
 import appjpm4everyone.baseprojectkotlin.di.module.SdkModule
+import appjpm4everyone.baseprojectkotlin.ui.main.MainActivityComponent
+import appjpm4everyone.baseprojectkotlin.ui.main.MainActivityModule
 
 import dagger.BindsInstance
 import dagger.Component
@@ -11,6 +13,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AppModule::class, SdkModule::class])
 interface AppComponent {
+
+    fun plus(module: MainActivityModule): MainActivityComponent
 
     @Component.Factory
     interface Factory {
