@@ -12,7 +12,6 @@ class MainViewModel(private val useCaseDogs: UseCaseDogs) : ScopedViewModel(){
 
     sealed class UiModel {
         object Loading : UiModel()
-        object NavigationLogin : UiModel()
         class ShowDogsError(var errorStatus: String) : UiModel()
         object ShowEmptyList : UiModel()
         class ShowDogList(var dogsList: List<String>) : UiModel()
@@ -22,10 +21,6 @@ class MainViewModel(private val useCaseDogs: UseCaseDogs) : ScopedViewModel(){
     val modelChooseBusiness: LiveData<UiModel> get() = _model
 
     private lateinit var responseDogs : DogsResponse
-
-    fun navigationLogin() {
-        _model.value = UiModel.NavigationLogin
-    }
 
     fun searchDogByName(queryDogs: String) {
         //Show loading
