@@ -115,6 +115,9 @@ dependencies {
     //Permission
     implementation 'com.karumi:dexter:6.0.0'
 
+    //Anko
+    implementation 'org.jetbrains.anko:anko-common:0.9'
+
     testImplementation testLibs.values()
     androidTestImplementation androidTestLibs.values()
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
